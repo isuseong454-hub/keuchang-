@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>크창 — 크리에이팅 창고</title>
+<meta name="theme-color" content="#0B0C0A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="크창">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script>if('serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <style>
 :root{--ink:#F1F4EA;--muted:#8b8f84;--faint:#5c6056;--lime:#E6F24A;--lime-d:#CFEE5A;--ai:#43E0E6;--card:#141810;--tile:#191d13;--t-spring:cubic-bezier(.2,.9,.3,1.15)}
@@ -448,10 +457,10 @@ function renderBuild(){var el=document.getElementById('blocks'),h='',done=0,tota
 function buildBody(b){var id=b.id;
   if(b.kind==='ai'){var t=DB.asm['ai_'+id];
     if(t)return '<div class="aitext"><span class="bd">글</span>'+esc(t)+'<span class="fx" style="float:right" onclick="editAi(\''+id+'\')">✏️</span></div>';
-    return '<div class="drop ai" onclick="editAi(\''+id+'\')">✍️ 글 채우기 · AI추천/직접/글창고 · 톡</div>';}
+    return '<div class="drop ai" onclick="editAi(\''+id+'\')">＋ 채우기</div>';}
   if(b.kind==='video'){var v=DB.asm[id];
     if(v&&v.url)return '<div class="fill"><p style="word-break:break-all;font-size:12px">🎬 '+esc(v.url)+'</p><span class="fx" onclick="DB.asm[\''+id+'\']=null;save();renderBuild()">✕</span></div>';
-    return '<div class="drop" onclick="addVideo(\''+id+'\')">🎬 영상 링크(유튜브/릴스) 붙이기 · 톡</div>';}
+    return '<div class="drop" onclick="addVideo(\''+id+'\')">＋ 영상 링크</div>';}
   if(b.kind==='multi'){var a=DB.asm[id]||[];var s='<div class="fillrow">';
     a.forEach(function(r,idx){var it=refItem(r);if(it)s+=multiChip(id,idx,it);});
     return s+'<span class="addm" onclick="pickMulti(\''+id+'\')">＋</span></div>';}
@@ -459,7 +468,7 @@ function buildBody(b){var id=b.id;
     return '<div class="barow">'+baSlot(id,a,0,'Before')+baSlot(id,a,1,'After')+'</div>';}
   var it=refItem(DB.asm[id]);
   if(it)return '<div class="fill">'+(it.thumb?'<img src="'+it.thumb+'">':'')+'<p>'+esc(it.memo||it.text||'')+'</p>'+(it.thumb?'<span class="fx" onclick="tglFull(\''+id+'\')" style="color:'+(DB.asm['full_'+id]?'#E6F24A':'#5c6056')+'">🖼</span>':'')+'<span class="fx" onclick="DB.asm[\''+id+'\']=null;save();renderBuild()">✕</span></div>';
-  return '<div class="drop" onclick="pickEv(\''+id+'\')">🗂 창고에서 증거 꽂기 · 톡</div>';
+  return '<div class="drop" onclick="pickEv(\''+id+'\')">＋ 사진·증거</div>';
 }
 function multiChip(id,idx,it){return '<span class="mth"'+(it.thumb?' style="background-image:url('+it.thumb+')"':'')+' onclick="rmArr(\''+id+'\','+idx+')">'+(it.thumb?'':esc((it.text||'').slice(0,5)))+'<i>✕</i></span>';}
 function baSlot(id,a,idx,label){var it=refItem(a[idx]);

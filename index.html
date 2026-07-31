@@ -359,6 +359,49 @@ body{font-family:'Pretendard Variable','Pretendard','Apple SD Gothic Neo','Malgu
 .hm-cov img{width:100%;height:100%;object-fit:cover;display:block}
 .hm-cov.empt{display:flex;align-items:center;justify-content:center;color:var(--faint);font-size:20px}
 .hm-fold.empty{border-style:dashed}
+/* ── 하단 도크 ── */
+.dock{position:absolute;left:0;right:0;bottom:0;z-index:25;display:flex;padding:8px 10px calc(10px + env(safe-area-inset-bottom));background:rgba(10,11,7,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.07)}
+.dk{flex:1;background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--muted);font-size:9.5px;font-weight:600;font-family:inherit;padding:2px 0;transition:color .2s,transform .25s var(--t-spring)}
+.dk .i{font-size:17px;line-height:1}
+.dk.on{color:var(--lime)}
+.dk:active{transform:scale(.9)}
+.dk-add .i{color:var(--lime)}
+/* ── 홈: 재료 지갑 ── */
+.hw-bal{margin:4px 2px 16px}
+.hw-bal .l{font-size:11px;color:var(--muted)}
+.hw-bal .v{font-size:32px;font-weight:800;letter-spacing:-.03em;margin-top:2px;font-variant-numeric:tabular-nums}
+.hw-bal .v em{font-style:normal;font-size:15px;font-weight:700;color:var(--lime)}
+.hw-bal .s{font-size:10.5px;color:var(--faint);margin-top:3px}
+.hw-sec{display:flex;align-items:center;font-size:12.5px;font-weight:700;margin:2px 2px 10px}
+.hw-sec span{margin-left:auto;color:var(--lime);font-size:11px;font-weight:600;cursor:pointer}
+.hw-crow{display:flex;gap:10px;overflow-x:auto;margin:0 -20px 16px;padding:2px 20px 6px;scrollbar-width:none}
+.hw-crow::-webkit-scrollbar{display:none}
+.hw-pg{flex:none;width:142px;height:92px;border-radius:16px;padding:11px 12px;position:relative;cursor:pointer;background:linear-gradient(140deg,#242a1a,#14160f 70%);border:1px solid rgba(230,242,74,.24);transition:transform .25s var(--t-spring)}
+.hw-pg:active{transform:scale(.96)}
+.hw-pg .ic{font-size:13px}
+.hw-pg .n{font-size:12px;font-weight:700;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hw-pg .p{font-size:9.5px;color:var(--muted);margin-top:1px}
+.hw-pg .bar{position:absolute;left:12px;right:12px;bottom:10px;height:4px;border-radius:99px;background:rgba(0,0,0,.55)}
+.hw-pg .bar i{display:block;height:100%;border-radius:99px;background:var(--lime)}
+.hw-pg .live{position:absolute;top:9px;right:9px;font-size:8.5px;font-weight:800;color:#12140a;background:var(--lime);padding:2px 6px;border-radius:99px}
+.hw-pg.new{display:grid;place-items:center;background:var(--card);border:1px dashed rgba(255,255,255,.2);color:var(--muted);font-size:11.5px;font-weight:700;text-align:center}
+.hw-qa{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:13px 10px 11px;margin-bottom:14px}
+.hw-qa .h{font-size:12px;font-weight:700;margin:0 4px 10px}
+.hw-qgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px 4px}
+.hw-qi{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px;font-family:inherit;padding:0}
+.hw-qi .b{width:42px;height:42px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);display:grid;place-items:center;font-size:16px;transition:transform .25s var(--t-spring)}
+.hw-qi:active .b{transform:scale(.88)}
+.hw-qi .t{font-size:9.5px;color:var(--muted)}
+.hw-rec{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:12px 12px 8px}
+.hw-rec .h{display:flex;font-size:12px;font-weight:700;margin:0 2px 6px}
+.hw-rec .h span{margin-left:auto;color:var(--lime);font-size:10.5px;font-weight:600;cursor:pointer}
+.hw-ri{display:flex;align-items:center;gap:9px;padding:7px 2px;cursor:pointer}
+.hw-ri .th{width:32px;height:32px;border-radius:9px;background:rgba(255,255,255,.06);display:grid;place-items:center;font-size:13px;flex:none;overflow:hidden}
+.hw-ri .th img{width:100%;height:100%;object-fit:cover}
+.hw-ri .tx{min-width:0}
+.hw-ri .n{font-size:11.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hw-ri .s{font-size:9.5px;color:var(--faint)}
+.hw-ri .k{margin-left:auto;font-size:9.5px;font-weight:700;flex:none}
 .hm-snips{padding:10px 11px 2px;display:flex;flex-direction:column;gap:5px;height:84px;overflow:hidden;background:#0e110b}
 .hm-snip{font-size:10.5px;color:var(--muted);background:rgba(255,255,255,.04);border-radius:7px;padding:5px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hm-fmeta{padding:9px 12px}
@@ -494,6 +537,10 @@ body{font-family:'Pretendard Variable','Pretendard','Apple SD Gothic Neo','Malgu
 .sug .s i{width:24px;height:24px;border-radius:6px;flex:none;background-size:cover;background-position:center}
 .sug .s span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sug .s.plus{color:var(--muted);border-style:dashed}
+/* 오늘 주울 증거 — 칸 고르면 «이 칸에 담기 좋은 것»이 바로 보인다 (막막함 제거) */
+.sug-pick{margin:8px 2px 2px;font-size:11px;line-height:1.6;color:var(--muted)}
+.sug-pick b{color:#d8dbc9;font-weight:700}
+.sug-pick em{font-style:normal;color:var(--lime)}
 .fillp{display:flex;align-items:center;gap:8px;background:rgba(230,242,74,.06);border-radius:10px;padding:8px 10px;font-size:11.5px;color:#e3e6d8;cursor:pointer;overflow:hidden}
 .fillp i{width:26px;height:26px;border-radius:6px;flex:none;background-size:cover;background-position:center}
 .fillp span{margin-left:auto;font-size:10px;color:var(--muted);flex:none}
@@ -592,8 +639,10 @@ body{font-family:'Pretendard Variable','Pretendard','Apple SD Gothic Neo','Malgu
     <button class="hm-ic hm-spark" onclick="openPages()" title="상세페이지 만들기"><svg viewBox="0 0 24 24"><path d="M12 2l2 6.2L20.2 10 14 11.8 12 18l-2-6.2L3.8 10 10 8.2z" fill="#E6F24A"/></svg></button>
   </div>
   <div class="main">
-    <!-- 홈: 사진첩·글 (위장) -->
-    <div class="view on" id="v-vault">
+    <!-- 홈: 재료 지갑 -->
+    <div class="view on" id="v-home"></div>
+    <!-- 창고: 사진첩·글 -->
+    <div class="view" id="v-vault">
       <div class="hm-tabs">
         <div class="hm-tab on" data-vt="photo" onclick="setVT('photo')">📷 사진첩</div>
         <div class="hm-tab" data-vt="text" onclick="setVT('text')">✍️ 글</div>
@@ -602,7 +651,14 @@ body{font-family:'Pretendard Variable','Pretendard','Apple SD Gothic Neo','Malgu
       <div id="vaultBody"></div>
     </div>
   </div>
-  <button class="fab" id="fab" onclick="onFab()">＋</button>
+  <!-- 하단 도크 -->
+  <div class="dock">
+    <button class="dk on" id="dk-home" onclick="showView('home')"><span class="i">⌂</span>홈</button>
+    <button class="dk" id="dk-vault" onclick="showView('vault')"><span class="i">▤</span>창고</button>
+    <button class="dk" id="dk-pages" onclick="openPages()"><span class="i">✦</span>페이지</button>
+    <button class="dk dk-add" onclick="onFab()"><span class="i">＋</span>담기</button>
+    <button class="dk" id="dk-acc" onclick="openAccount()"><span class="i">◎</span>계정</button>
+  </div>
 
   <!-- 내 페이지 목록 -->
   <div id="pgl">
@@ -708,7 +764,7 @@ async function initAuth(){load();var saved=null;try{saved=JSON.parse(localStorag
   if(saved&&saved.code&&saved.pinHash&&sb){var res=await cmRpc('kc_login',{p_code:saved.code,p_pin_hash:saved.pinHash});if(res&&res.ok&&res.user){__kcAuth=saved;await afterLogin();return;}}
   var lg=document.getElementById('login');lg.classList.remove('hide');setTimeout(function(){lg.classList.add('show');},50);
 }
-function bootApp(){setupPageLayer();document.getElementById('streak').textContent='🔥 '+(DB.count||0);renderVault();renderWiz();}
+function bootApp(){setupPageLayer();document.getElementById('streak').textContent='🔥 '+(DB.count||0);renderHome();renderVault();renderWiz();}
 
 /* ===== 카테고리 ===== */
 var PCATS=[['all','전체','#8b8f84','🗂'],['content','내 콘텐츠','#8FD69B','🏆'],['ba','작업 전후','#7EC1DD','✨'],['me','나·일상','#BBA2E6','🙋'],['proof','증거·후기','#E4B979','💬'],['brand','브랜딩','#A6ADB3','🏛'],['video','영상','#E39191','🎬']];
@@ -768,14 +824,70 @@ function pickPhoto(){document.getElementById('fileIn').click();}
 function compress(src,cb){var img=new Image();img.onload=function(){var m=1080,w=img.width,h=img.height;if(w>h&&w>m){h=h*m/w;w=m;}else if(h>m){w=w*m/h;h=m;}
   var c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(img,0,0,w,h);cb(c.toDataURL('image/jpeg',.78));};img.src=src;}
 var pendThumb=null,pendCat='content',pendMemo='',__preCat=null;
+/* 오늘 주울 증거 사전 — «뭘 담지» 막막할 때 칸별로 지금 폰에 있을 법한 것들.
+   원리: 내 자랑(말)보다 장면·숫자·남의 입이 백 배 세다 — 그걸 줍는 곳이 이 창고다 */
+var SUG_PICK={content:['잘 나온 조회수 화면','댓글 많이 달린 게시물','알고리즘 추천에 뜬 순간'],
+  ba:['작업 직전·직후 같은 각도 두 컷','과정 중간 컷 한 장'],
+  me:['일하는 손·뒷모습','작업 도구·내 자리','프로필용 얼굴 한 컷'],
+  proof:['손님 카톡 후기 캡처','재방문 예약 화면','DM 문의 캡처','대기·줄 선 모습'],
+  brand:['간판·로고 컷','매장·작업실 분위기'],
+  video:['작업 과정 10초','손님 반응 순간']};
+function sugPickHint(){var el=document.getElementById('sugPick');if(!el)return;
+  var a=SUG_PICK[pendCat]||[];
+  el.innerHTML=a.length?'<b>이 칸에 담기 좋은 것</b> — '+a.map(function(t){return '<em>'+t+'</em>';}).join(' · '):'';}
 function photoMetaSheet(thumb){pendThumb=thumb;pendCat=__preCat||((vt==='photo'&&homeCat)?homeCat:'content');__preCat=null;
   openSheet('<div class="handle"></div><h3>어디에 담을까요?</h3><div class="sub">나중에 바꿔도 돼요.</div>'
    +'<img src="'+thumb+'" style="width:100%;max-height:200px;object-fit:cover;border-radius:12px">'
-   +'<div class="selrow" id="pcat">'+PCATS.slice(1).map(function(c){return '<span class="s'+(c[0]===pendCat?' on':'')+'" onclick="pendCat=\''+c[0]+'\';selOn(this)">'+c[1]+'</span>';}).join('')+'</div>'
+   +'<div class="selrow" id="pcat">'+PCATS.slice(1).map(function(c){return '<span class="s'+(c[0]===pendCat?' on':'')+'" onclick="pendCat=\''+c[0]+'\';selOn(this);sugPickHint()">'+c[1]+'</span>';}).join('')+'</div>'
+   +'<div class="sug-pick" id="sugPick"></div>'
    +'<textarea class="field" id="pmemo" rows="2" placeholder="한 줄 맥락 (예: 이 후킹으로 204만)"></textarea>'
-   +'<div class="btnp" onclick="savePhoto()">담기</div>');}
+   +'<div class="btnp" onclick="savePhoto()">담기</div>');
+  sugPickHint();}
 function savePhoto(){DB.photos.push({id:uid(),cat:pendCat,memo:document.getElementById('pmemo').value.trim(),thumb:pendThumb,ts:Date.now()});save();bumpStreak();closeSheet();afterSaveHome('photo');toast('담았어요 ✓');}
-function afterSaveHome(t){if(vt!==t){vt=t;homeCat=null;}syncTabs();renderVault();if(_wkOn&&_wkStep===1)wkCollect();}
+function afterSaveHome(t){if(vt!==t){vt=t;homeCat=null;}syncTabs();renderVault();renderHome();if(_wkOn&&_wkStep===1)wkCollect();}
+
+/* ===== 홈(재료 지갑) + 하단 도크 ===== */
+function showView(v){cur=v;
+  document.getElementById('v-home').classList.toggle('on',v==='home');
+  document.getElementById('v-vault').classList.toggle('on',v==='vault');
+  var dh=document.getElementById('dk-home'),dv=document.getElementById('dk-vault');
+  if(dh)dh.classList.toggle('on',v==='home');if(dv)dv.classList.toggle('on',v==='vault');
+  if(v==='home')renderHome();else renderVault();
+  var m=document.querySelector('.main');if(m)m.scrollTop=0;}
+function timeAgo(ts){if(!ts)return '';var d=Date.now()-ts,m=Math.floor(d/60000);if(m<1)return '방금';if(m<60)return m+'분 전';var h=Math.floor(m/60);if(h<24)return h+'시간 전';var dd=Math.floor(h/24);if(dd===1)return '어제';if(dd<7)return dd+'일 전';var dt=new Date(ts);return (dt.getMonth()+1)+'/'+dt.getDate();}
+function catName2(kind,id){var a=(kind==='photo'?PCATS:TCATS).filter(function(c){return c[0]===id;})[0];return a?a[1]:id;}
+function qAdd(kind,cat){__preCat=cat||null;if(kind==='photo')pickPhoto();else textSheet();}
+function renderHome(){var el=document.getElementById('v-home');if(!el)return;
+  var np=DB.photos.length,nt=DB.texts.length;
+  var cards=(DB.pages||[]).slice().reverse().map(function(p){var g=goalMeta(p.goal);var pr=pgProgress(p);var pct=pr.t?Math.round(pr.d/pr.t*100):0;
+    return '<div class="hw-pg" onclick="pickPage(\''+p.id+'\')">'+(p.published?'<span class="live">LIVE</span>':'')+'<div class="ic">'+g.ic+'</div><div class="n">'+esc(p.name||'이름 없음')+'</div><div class="p">채움 '+pct+'%</div><div class="bar"><i style="width:'+pct+'%"></i></div></div>';}).join('');
+  cards+='<div class="hw-pg new" onclick="openFork()">＋ 새 페이지</div>';
+  var rec=DB.photos.map(function(p){return {t:'p',ts:p.ts||0,it:p};}).concat(DB.texts.map(function(t){return {t:'t',ts:t.ts||0,it:t};}));
+  rec.sort(function(a,b){return b.ts-a.ts;});rec=rec.slice(0,3);
+  var recHtml=rec.length?rec.map(function(r){
+    if(r.t==='p'){var p=r.it;return '<div class="hw-ri" onclick="openPhoto(\''+p.id+'\')"><div class="th"><img src="'+p.thumb+'"></div><div class="tx"><div class="n">'+(p.memo?esc(p.memo):'사진')+'</div><div class="s">'+timeAgo(r.ts)+' · 사진</div></div><span class="k" style="color:'+catColor(p.cat)+'">'+catName2('photo',p.cat)+'</span></div>';}
+    var t=r.it;return '<div class="hw-ri" onclick="openText(\''+t.id+'\')"><div class="th">✍️</div><div class="tx"><div class="n">'+esc(t.text.slice(0,24))+'</div><div class="s">'+timeAgo(r.ts)+' · 글</div></div><span class="k" style="color:'+catColor(t.cat)+'">'+catName2('text',t.cat)+'</span></div>';}).join('')
+   :'<div style="font-size:11px;color:var(--faint);padding:10px 2px">아직 없어요 — 아래 ＋ 담기로 시작해요</div>';
+  el.innerHTML=
+    '<div class="hw-bal"><div class="l">모은 재료</div><div class="v">'+(np+nt)+'<em> 개</em></div><div class="s">사진 '+np+' · 글 '+nt+'</div></div>'
+   +'<div class="hw-sec">내 상세페이지 <span onclick="openPages()">전체 ›</span></div>'
+   +'<div class="hw-crow">'+cards+'</div>'
+   +'<div class="hw-qa"><div class="h">바로 담기</div><div class="hw-qgrid">'
+     +'<button class="hw-qi" onclick="qAdd(\'photo\')"><span class="b">📷</span><span class="t">사진</span></button>'
+     +'<button class="hw-qi" onclick="qAdd(\'photo\',\'ba\')"><span class="b">✨</span><span class="t">작업 전후</span></button>'
+     +'<button class="hw-qi" onclick="qAdd(\'photo\',\'proof\')"><span class="b">💬</span><span class="t">증거·후기</span></button>'
+     +'<button class="hw-qi" onclick="qAdd(\'photo\',\'content\')"><span class="b">🏆</span><span class="t">내 콘텐츠</span></button>'
+     +'<button class="hw-qi" onclick="qAdd(\'text\',\'hook\')"><span class="b">✍️</span><span class="t">후킹</span></button>'
+     +'<button class="hw-qi" onclick="qAdd(\'text\',\'voice\')"><span class="b">🗣</span><span class="t">고객 말</span></button>'
+     +'<button class="hw-qi" onclick="qAdd(\'text\',\'num\')"><span class="b">📊</span><span class="t">수치 문장</span></button>'
+     +'<button class="hw-qi" onclick="onFab()"><span class="b">⋯</span><span class="t">더</span></button>'
+   +'</div></div>'
+   +'<div class="hw-rec"><div class="h">최근 담은 것 <span onclick="showView(\'vault\')">창고 전체 ↗</span></div>'+recHtml+'</div>';}
+function openAccount(){var code=(__kcAuth&&__kcAuth.code)||'로컬';
+  openSheet('<div class="handle"></div><h3>◎ 계정</h3>'
+   +'<div style="font-size:12px;color:var(--muted);margin:10px 0 14px">코드 <b style="color:var(--ink)">'+code+'</b> · 사진 '+DB.photos.length+' · 글 '+DB.texts.length+' · 페이지 '+(DB.pages||[]).length+'</div>'
+   +'<div class="btng" onclick="kcLogout()">로그아웃</div>');}
+function kcLogout(){if(!confirm('로그아웃할까요? 데이터는 클라우드에 안전해요.'))return;localStorage.removeItem('kc_auth');location.reload();}
 function textSheet(){pendCat=__preCat||((vt==='text'&&homeCat)?homeCat:'hook');__preCat=null;pendTmpl='none';
   openSheet('<div class="handle"></div><h3>글 담기</h3><div class="sub">자유롭게, 또는 구조 템플릿으로.</div>'
    +'<div style="font-size:11px;color:var(--muted);margin-bottom:8px">구조 템플릿 · 고르면 뼈대 자동 채움</div>'
@@ -997,9 +1109,18 @@ function renderBuild(){var el=document.getElementById('blocks');if(!el)return;
 }
 function matScore(){var bins=PCATS.slice(1).map(function(c){var cnt=DB.photos.filter(function(p){return p.cat===c[0];}).length;return {id:c[0],n:c[1],col:c[2],cnt:cnt,sc:Math.min(10,Math.round(cnt*3.5))};});var avg=bins.reduce(function(a,x){return a+x.sc;},0)/(bins.length||1);return {bins:bins,score:Math.round(avg*10)/10};}
 function openMaterialCheck(){var ms=matScore(),np=DB.photos.length,nt=DB.texts.length;var weak=ms.bins.slice().sort(function(a,b){return a.sc-b.sc;})[0];
+  /* 남의 입 우선 — 증거·후기가 0이면 그게 무조건 다음 한 컷 (내 말보다 남의 입이 백 배 세다) */
+  var proofBin=ms.bins.filter(function(x){return x.id==='proof';})[0];
+  var proofFirst=proofBin&&proofBin.cnt===0;
+  if(proofFirst)weak=proofBin;
+  var sug=(SUG_PICK[weak.id]||[]).slice(0,3);
+  var nextMsg=proofFirst
+    ?'🎯 <b>다음 한 컷</b> — «증거·후기»가 비어 있어요. 내 말보다 <b>남의 입</b>이 백 배 셉니다.'
+    :'🎯 <b>다음 한 컷</b> — 제일 약한 «'+weak.n+'» 몇 장 더 모으면 점수·가능한 게 늘어요.';
+  if(sug.length)nextMsg+='<br><span style="color:var(--lime)">'+sug.join(' · ')+'</span> — 오늘 폰에서 바로 주울 수 있어요.';
   var bars=ms.bins.map(function(x){var col=x.sc>=6?'linear-gradient(90deg,#A9B838,#E6F24A)':(x.sc>=3?'#E0A44A':'#e07a7a');return '<div class="mx-ev"><span class="mx-el">'+x.n+'</span><span class="mx-eb"><i style="width:'+(x.sc*10)+'%;background:'+col+'"></i></span><span class="mx-es">'+x.sc+'</span></div>';}).join('');
   var rows=CATG.map(function(g){var items=g.ids.map(function(id){var b=blk(id);if(!b||b.id==='cta'||b.id==='topbar')return '';var st,lab;if(blkFilled(b)){st='O2';lab='채움';}else{var needs=(b.kind==='ev'||b.kind==='multi'||b.kind==='ba');if(needs){if(np>0){st='O';lab='재료 있음';}else{st='X';lab='사진 필요';}}else{st='O';lab='쓰면 됨';}}var ic=st==='O2'?'✓':(st==='O'?'○':'✕');return '<div class="mx-row mx-'+st+'"><span class="mx-i">'+ic+'</span><span class="mx-n">'+b.n+'</span><span class="mx-l">'+lab+'</span></div>';}).filter(Boolean).join('');if(!items)return '';return '<div class="mx-cat"><span class="mx-cd" style="background:'+g.c+'"></span>'+g.n+'</div>'+items;}).join('');
-  openSheet('<div class="handle"></div><div class="mx-top"><div class="mx-num"><b>'+ms.score+'</b><span>/ 10</span></div><div><div class="mx-t">재료 충실도</div><div class="mx-d2">📷 사진 '+np+'장 · ✍️ 글 '+nt+'개</div></div></div><div class="mx-evs">'+bars+'</div><div class="mx-next">🎯 <b>다음 한 컷</b> — 제일 약한 «'+weak.n+'» 몇 장 더 모으면 점수·가능한 게 늘어요.</div><div class="mx-lab">이 재료로 만들 수 있나</div>'+rows);
+  openSheet('<div class="handle"></div><div class="mx-top"><div class="mx-num"><b>'+ms.score+'</b><span>/ 10</span></div><div><div class="mx-t">재료 충실도</div><div class="mx-d2">📷 사진 '+np+'장 · ✍️ 글 '+nt+'개</div></div></div><div class="mx-evs">'+bars+'</div><div class="mx-next">'+nextMsg+'</div><div class="mx-lab">이 재료로 만들 수 있나</div>'+rows);
 }
 var GOALS=[{id:'course',ic:'🎓',n:'강의 · 클래스',d:'지식·노하우 판매',rec:['후킹','공감','강사 증명','결과·릴스벽','해결·방법','후기','제안·가격','FAQ','신청']},{id:'product',ic:'📦',n:'상품 · 펀딩',d:'제품·굿즈 판매',rec:['후킹','문제 자극','특징 요약','결과·릴스벽','변화(전/후)','제안·가격','일정 안내','신청']},{id:'brand',ic:'✨',n:'브랜드 · 프로필',d:'나·가게 알리기',rec:['후킹','제작 스토리','결과·릴스벽','신뢰 배지','후기','신청']}];
 function openStartPick(){openSheet('<div class="handle"></div><div class="sp-t">무엇을 만들까요?</div><div class="sp-h">고르면 그 유형에 맞는 «골격 순서»를 추천해요</div>'+GOALS.map(function(g){return '<div class="sp-card'+(DB.goal===g.id?' on':'')+'" onclick="pickGoal(\''+g.id+'\')"><span class="sp-ic">'+g.ic+'</span><div class="sp-tx"><b>'+g.n+'</b><span>'+g.d+'</span></div><span class="sp-chk">✓</span></div>';}).join('')+(DB.goal?spRec(DB.goal):''));}
@@ -1409,7 +1530,7 @@ var _wkOn=false,_wkStep=1,_newGoal=null;
 function go(v){if(v==='vault'){closeWk();}else if(v==='build'){_wkOn?wkSetStep(2):openWk(2);}else{_wkOn?wkSetStep(3):openWk(3);}}
 function openPages(){renderPages();document.getElementById('pgl').classList.add('on');}
 function closePages(){document.getElementById('pgl').classList.remove('on');}
-function renderPages(){var el=document.getElementById('pglList');
+function renderPages(){renderHome();var el=document.getElementById('pglList');
   if(!DB.pages.length){el.innerHTML='<div class="empty" style="padding:34px 10px"><div class="ico">✦</div>아직 없어요.<br>아래에서 첫 페이지를 만들어보세요.</div>';return;}
   el.innerHTML=DB.pages.slice().reverse().map(function(p){var g=goalMeta(p.goal);var pr=pgProgress(p);var pct=pr.t?Math.round(pr.d/pr.t*100):0;
     return '<div class="pgc" onclick="pickPage(\''+p.id+'\')"><div class="pi">'+g.ic+'</div><div class="pt"><b>'+esc(p.name||'이름 없음')+'</b><span>'+g.n+'</span></div>'
@@ -1446,7 +1567,7 @@ function openWk(step){if(!_curPg.id){openPages();return;}
   document.getElementById('wkName').textContent=_curPg.name||'상세페이지';
   document.getElementById('wkBadge').textContent=(g.n||'').split(' ')[0];
   wkSetStep(step||1);}
-function closeWk(){_wkOn=false;document.getElementById('wk').classList.remove('on');renderVault();}
+function closeWk(){_wkOn=false;document.getElementById('wk').classList.remove('on');renderVault();renderHome();}
 var WKGUIDE={
  1:['🗂 1단계 · 요소별로 담아요','필요한 칸에 사진·글을 나눠 담아요. 연두 ✱ 가 필수 칸이에요. 칸을 누르면 담긴 걸 볼 수 있어요.'],
  2:['🧩 2단계 · 골격을 채워요','담은 재료를 골격 칸에 꽂아요. 🧭 재료 점검으로 빈 곳을 확인해요.'],
